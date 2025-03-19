@@ -122,7 +122,7 @@ if ($boxtest -ne $testAlias) {
     $errorCount++
 } else {
     add-content -path $debugfile -value "There is a session with ExchangeOnline"
-    Disconnect-ExchangeOnline
+    Disconnect-ExchangeOnline -Confirm:$false
 }
 
 Start-Sleep -Seconds 1
