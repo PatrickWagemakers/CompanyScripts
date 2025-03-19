@@ -46,6 +46,10 @@ $Exchcredentials = Get-StoredCredential -target $exchangeAccount
 $adminsrv = $Servicecredentials.userName
 $excusr = $Exchcredentials.username
 
+# Write usernames to debug file
+add-content -path $debugfile -value "Service Account Username : $adminsrv"
+add-content -path $debugfile -value "Exchange Account Username: $excusr"
+
 # Check installed module versions
 $modules = @(
     @{Name = 'MicrosoftTeams'; MinVersion = '5.1.0'},
